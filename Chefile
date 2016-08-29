@@ -4,7 +4,6 @@ workspace.commands[0].attributes={
 }
 workspace.commands[0].name="run"
 workspace.commands[0].commandLine="cd /projects/bitnami-docker-express && npm start"
-workspace.runtime={}
 workspace.postload.actions[0].script="cd /projects/bitnami-docker-express && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf /projects/bitnami-docker-express && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && echo -e \"\n\n\n\n* Welcome to the Bitnami development container for Express *\n\nA sample project has been created just for you, ready to be run.\nFor more information, please refer to README.md.\n\n\n\nYou may close this window.\""
 workspace.name="bitnami"
 workspace.ram=2048
